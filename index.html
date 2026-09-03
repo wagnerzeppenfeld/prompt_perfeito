@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuantumTech - O Futuro da Física Quântica</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0d0d0d;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #1a1a1a;
+            border-bottom: 2px solid #00ff66;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        /* Container do Canto Superior Esquerdo (Login + Pesquisa) */
+        .left-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        /* Campo de Acesso do Usuário (Login) */
+        .user-access {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .user-access input {
+            padding: 0.3rem 0.6rem;
+            border: 1px solid #333;
+            background-color: #262626;
+            color: #fff;
+            border-radius: 4px;
+            outline: none;
+            font-size: 0.85rem;
+            width: 110px;
+        }
+
+        .user-access input:focus {
+            border-color: #00ff66;
+        }
+
+        .user-access button {
+            padding: 0.3rem 0.8rem;
+            border: none;
+            background-color: #00ff66;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            transition: background 0.3s;
+        }
+
+        .user-access button:hover {
+            background-color: #00cc52;
+        }
+
+        /* Campo de Pesquisa */
+        .search-box {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-box input {
+            padding: 0.4rem 0.8rem;
+            border: 1px solid #333;
+            background-color: #262626;
+            color: #fff;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+            font-size: 0.9rem;
+        }
+
+        .search-box input:focus {
+            border-color: #00ff66;
+        }
+
+        .search-box button {
+            padding: 0.4rem 0.8rem;
+            border: none;
+            background-color: #00ff66;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 0 4px 4px 0;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .search-box button:hover {
+            background-color: #00cc52;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00ff66;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 span {
+            color: #00ff66;
+        }
+
+        .hero p {
+            color: #a0a0a0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Content Grid */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: #1a1a1a;
+            border: 1px solid #262626;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #00ff66;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #262626;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content h3 {
+            color: #00ff66;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-content p {
+            color: #c0c0c0;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #161616;
+            border-top: 1px solid #262626;
+            color: #777;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="left-controls">
+            <form class="user-access" onsubmit="event.preventDefault();">
+                <input type="text" placeholder="Usuário" aria-label="Usuário">
+                <input type="password" placeholder="Senha" aria-label="Senha">
+                <button type="submit">Entrar</button>
+            </form>
+            
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Pesquisar conteúdo...">
+                <button onclick="searchFunction()">Buscar</button>
+            </div>
+        </div>
+
+        <div class="logo">QuantumTech</div>
+    </header>
+
+    <section class="hero">
+        <h1>A Era da <span>Computação Quântica</span></h1>
+        <p>Explore a fusão entre a física fundamental e a tecnologia do amanhã.</p>
+    </section>
+
+    <main class="container">
+        <div class="grid">
+            
+            <article class="card">
+                <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=600&q=80" alt="Processador Quântico">
+                <div class="card-content">
+                    <h3>Superposição Quântica</h3>
+                    <p>Diferente dos bits clássicos (0 ou 1), os qubits utilizam a superposição para existir em múltiplos estados simultaneamente, multiplicando exponencialmente o poder de processamento.</p>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=600&q=80" alt="Earanhamento Quântico">
+                <div class="card-content">
+                    <h3>Ementalhamento Quântico</h3>
+                    <p>Fenômeno onde partículas interconectadas reagem instantaneamente ao estado uma da outra, independentemente da distância, viabilizando redes de comunicação ultrasseguras.</p>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" alt="Criptografia Quântica">
+                <div class="card-content">
+                    <h3>Criptografia QKD</h3>
+                    <p>A Distribuição Quântica de Chaves (QKD) garante que qualquer tentativa de interceptação de dados altere o estado das partículas, tornando a invasão fisicamente impossível de ocultar.</p>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 QuantumTech - Desenvolvido para exploração científica e tecnológica.</p>
+    </footer>
+
+    <script>
+        function searchFunction() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                const title = card.querySelector('h3').innerText.toLowerCase();
+                const text = card.querySelector('p').innerText.toLowerCase();
+                
+                if (title.includes(input) || text.includes(input)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
